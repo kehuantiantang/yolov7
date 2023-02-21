@@ -250,6 +250,7 @@ def test(opt, data, weights=None, batch_size=32, imgsz=640, conf_thres=0.001, io
             # Append statistics (correct, conf, pcls, tcls) --> predict bbox, target bbox
             stats.append((correct.cpu(), pred[:, 4].cpu(), pred[:, 5].cpu(), tcls))
 
+
     counter = defaultdict(int)
     for k, v in tp_fp_dict.items():
         counter['disease_tp'] += len(v[0]['tp'])
